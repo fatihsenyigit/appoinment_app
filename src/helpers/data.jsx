@@ -1,3 +1,12 @@
+import pic1 from '../img/dr1.jpg'
+import pic2 from '../img/dr2.jpg'
+import pic3 from '../img/dr3.jpg'
+import pic4 from '../img/dr4.jpg'
+import pic5 from '../img/dr5.jpg'
+import pic6 from '../img/dr6.jpg'
+import pic7 from '../img/dr7.jpg'
+import pic8 from '../img/dr8.jpg'
+
 export const appointmentData = [
   {
     id: 1,
@@ -27,48 +36,48 @@ export const doctorData = [
     id: 1,
     name: "Dr.Hazel Valery",
     dep: "Cardiology",
-    img: "./img/dr1.jpg",
+    img: pic1,
   },
   {
     id: 2,
     name: "Dr. Jasmine Carpanter",
     dep: "Radiolgy",
-    img: "./img/dr2.jpg",
+    img: pic2,
   },
   {
     id: 3,
     name: "Dr. Arianna Mary",
     dep: "Orthopedy",
-    img: "./img/dr3.jpg",
+    img: pic3,
   },
   {
     id: 4,
     name: "Dr. Jessica White",
     dep: "Gastroentogoly",
-    img: "./img/dr4.jpg",
+    img: pic4,
   },
   {
     id: 5,
     name: "Harry Coming",
     dep: "Surgery",
-    img: "./img/dr9.jpg",
+    img: pic5,
   },
   {
     id: 6,
     name: "Dr. Kristensen Abraham",
     dep: "Neurology",
-    img: "./img/dr6.jpg",
+    img: pic6,
   },
   {
     id: 7,
     name: "Dr.Asley Graham",
     dep: "Pediatry",
-    img: "./img/dr7.jpg",
+    img: pic7,
   },
   {
     id: 8,
     name: "Dr. Mary Motley",
     dep: "Oncology",
-    img: "./img/dr8.jpg",
+    img: pic8,
   },
-]
+];
