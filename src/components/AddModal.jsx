@@ -32,6 +32,7 @@ const AddModal = ({
                 value={patient}
                 id="patient"
                 onChange={handledata}
+                required
               />
             </Form.Group>
             <Form.Group
@@ -45,6 +46,7 @@ const AddModal = ({
                 value={day}
                 id="day"
                 onChange={handledata}
+                required
               />
             </Form.Group>
             <Container className="d-flex gap-3 justify-content-center">

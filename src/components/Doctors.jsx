@@ -64,7 +64,7 @@ const Doctors = () => {
             <AppointmentList list={list}></AppointmentList>
           </div>
         ) : (
-          <div>bos</div>
+          <div className="d-flex justify-content-center mt-5"><img className="w-50" src="./img/appointment.jpg" alt="" /></div>
         )}
       </div>
       <>
