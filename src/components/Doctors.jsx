@@ -49,9 +49,8 @@ const Doctors = () => {
   // }
 
   const remove = (item) => {
-    setList((data) => {
-      return data.filter((info) => info !== item);
-    });
+    setList((data) => data.filter((info) => info !== item)
+    );
   };
 
   return (
