@@ -17,7 +17,6 @@ const Doctors = () => {
   const [list, setList] = useState([]);
   const { patient, day } = appointment;
 
-  console.log(list);
 
   const clickCard = (e) => {
     setDoctorName(e.name);
@@ -43,6 +42,12 @@ const Doctors = () => {
 
   const handleClose = () => setShow(false);
 
+  const remove = (item) => {
+    setList(data => {
+      return data.filter (info => info !== item)
+    })
+  }
+
   return (
     <div className="doctors container">
       <div className="row gap-5 justify-content-center">
@@ -61,7 +66,7 @@ const Doctors = () => {
       <div className="appointmentList">
         {list.length ? (
           <div>
-            <AppointmentList list={list}></AppointmentList>
+            <AppointmentList list={list} remove={remove}></AppointmentList>
           </div>
         ) : (
           <div className="d-flex justify-content-center mt-5"><img className="w-50" src="./img/appointment.jpg" alt="" /></div>

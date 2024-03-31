@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap"
 import '../css/AppointmentList.css'
 
 
-const AppointmentList = ({list}) => {
+const AppointmentList = ({list, remove}) => {
     
     return (
       <div className="list-container">
@@ -18,7 +18,7 @@ const AppointmentList = ({list}) => {
               <h4>{e.time}</h4>
             </div>
             <div className="right">
-              <button className="btn">X</button>
+              <button onClick={()=>remove(e)} className="btn">X</button>
             </div>
           </Container>
         ))}
