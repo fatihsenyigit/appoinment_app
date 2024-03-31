@@ -2,36 +2,47 @@ import { doctorData } from "../helpers/data";
 import "../css/doctors.css";
 import AddModal from "./AddModal";
 import { useState } from "react";
+import AppointmentList from "./AppointmentList";
 
 const Doctors = () => {
   const [show, setShow] = useState(false);
-  const [showAppointment, setShowAppointment] = useState([]);
-  let appointmentData = [];
   const [doctorName, setDoctorName] = useState("");
+  const [appointment, setAppointment] = useState({
+    id: "",
+    patient: "",
+    day: "",
+    doctor: "",
+    time: "",
+  });
+  const [list, setList] = useState([]);
+  const { patient, day } = appointment;
 
+  console.log(list);
 
   const clickCard = (e) => {
-    setDoctorName(e)
+    setDoctorName(e.name);
     setShow(true);
   };
 
-  const handleSubmit = (e) => {
-    setShow(false);
-    const element = e.target.closest("Form");
-    const patient = element.querySelector(".input1").value;
-    const day = element.querySelector(".date1").value;
-    const doctor =
-      element.parentNode.previousSibling.querySelector(".title1").innerText;
-    const aaa = {
-      id: new Date(),
-      patient: patient,
-      doctor: doctor,
-      day:day,
-      time: new Date(),
-    };
-    console.log(aaa);
+  const handledata = (e) => {
+    setAppointment({
+      ...appointment,
+      [e.target.id]: e.target.value,
+      doctor: doctorName,
+      id: new Date().getTime(),
+      time: new Date().toLocaleTimeString(),
+    });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShow(false);
+    setList([...list, appointment]);
+    setAppointment({ patient: "", day: "", doctor: "", id: "" });
+  };
+
   const handleClose = () => setShow(false);
+
   return (
     <div className="doctors container">
       <div className="row gap-5 justify-content-center">
@@ -47,13 +58,25 @@ const Doctors = () => {
           </div>
         ))}
       </div>
+      <div className="appointmentList">
+        {list.length ? (
+          <div>
+            <AppointmentList list={list}></AppointmentList>
+          </div>
+        ) : (
+          <div>bos</div>
+        )}
+      </div>
       <>
         {
           <AddModal
             doctorName={doctorName}
             show={show}
+            patient={patient}
+            day={day}
             handleClose={handleClose}
             handleSubmit={handleSubmit}
+            handledata={handledata}
           ></AddModal>
         }
       </>

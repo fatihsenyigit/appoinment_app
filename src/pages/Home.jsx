@@ -1,7 +1,6 @@
 
 // import Button from 'react-bootstrap/Button'
 import { Container } from 'react-bootstrap';
-import AppointmentList from '../components/AppointmentList';
 import Doctors from '../components/Doctors';
 
 const Home = () => {
@@ -14,9 +13,7 @@ const Home = () => {
         <div className="doctorsContainer">
           <Doctors></Doctors>
         </div>
-        <div className="appointmentList">
-          <AppointmentList></AppointmentList>
-        </div>
+        
       </Container>
     );
 }
