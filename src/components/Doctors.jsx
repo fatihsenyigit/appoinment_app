@@ -42,11 +42,17 @@ const Doctors = () => {
 
   const handleClose = () => setShow(false);
 
+  // const remove = (item) => {
+  //   setList(data => {
+  //     return data.filter (info => info !== item)
+  //   })
+  // }
+
   const remove = (item) => {
-    setList(data => {
-      return data.filter (info => info !== item)
-    })
-  }
+    setList((data) => {
+      return data.filter((info) => info !== item);
+    });
+  };
 
   return (
     <div className="doctors container">
