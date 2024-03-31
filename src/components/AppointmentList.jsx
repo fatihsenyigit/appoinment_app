@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap"
+import '../css/AppointmentList.css'
 
 
 const AppointmentList = ({list}) => {
@@ -6,18 +7,19 @@ const AppointmentList = ({list}) => {
     return (
         <div>
             {list.map((e)=>(
+                
                 <Container>
                     <h1>Appointment List</h1>
                     <div className="left">
-                        <h3>{list.patient}</h3>
-                        <h4>{list.doctor}</h4>
+                        <h3>{e.patient}</h3>
+                        <h4>{e.doctor}</h4>
                     </div>
                     <div className="middle">
-                        <h3>{list.day}</h3>
-                        <h4>{list.time}</h4>
+                        <h3>{e.day}</h3>
+                        <h4>{e.time}</h4>
                     </div>
                     <div className="right">
-                        <img src="" alt="" />
+                        <button className="btn">X</button>
                     </div>
                 </Container>
             ))}
